@@ -9,36 +9,67 @@
   <!-- ↓서버에 올릴땐 이거로 올려야 함 -->
   <!-- <script  src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
   <style>
-   
+    *{
+      margin: 0;
+      padding:0;
+      box-sizing: border-box;
+    }
+
+    #outer{
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid #333333;
+      overflow: auto;
+    }
+
+    .inner{
+      width: 1000px;
+      height: 1000px;
+      background: #ff6600;
+    }
+
+    #info{
+      margin: 0 auto;
+      width: 300px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+
   </style>
 </head>
 <body>
-  <div><input type="text"></div>
-  <div><input type="password"></div>
-  <div><button>확인</button></div>
-  <div>
-    <input type="checkbox" name="css" id="css" checked='checked'>
-    <label for="css">css</label>
-  </div>
-  <div>
-    <select>
-      <option>과목선택</option>
-      <option value="javascript">javascript</option>
-      <option value="jquery">jquery</option>
-    </select>
-    <textarea cols="20" rows="5" disabled="disabled"></textarea>
-  </div>
 
+<div id="outer">
+  <div class="inner"></div>
+</div>
+
+<div id="info">
+  <span></span>
+  <button>클릭</button>
+</div>
 
 </body>
+
 <script>
-  $(function(){
-    $('input:text').css('background','red')
-    $(':button').css('background','yellow')
-    $('input:checkbox + label').css('background','green')
-    $('option:selected').css('background','blue')
-    $('textarea:disabled').css('background','pink')
+  var topValue = $('#outer').scrollTop()
+  var leftValue = $('#outer').scrollLeft()
+
+  $('#info span')//
+  .text(`scrollTop : ${topValue} / scrollLeft : ${leftValue}`)
+
+  $('#outer').scroll(function(){
+    topValue = $('#outer').scrollTop()
+    leftValue = $('#outer').scrollLeft()
+   
+    $('#info span')//
+      .text(`scrollTop : ${topValue} / scrollLeft : ${leftValue}`)
+   
   })
-  
+
+  $('button').click(function(){
+    $('#outer').scrollTop(250).scrollLeft(250)
+  })
 </script>  
 </html>

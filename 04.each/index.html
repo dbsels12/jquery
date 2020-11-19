@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jquery | each</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>each</h1>
+    <div class="card">
+      <div class="card_photo">
+        <img src="./images/group_03.jpg" alt="img">
+        <div class="sns">
+          <span class="share"><i class="xi-share-alt"></i></span>
+          <span><i class="xi-apple"></i></span>
+          <span><i class="xi-facebook"></i></span>
+          <span><i class="xi-instagram"></i></span>
+        </div>
+      </div>
+      <div class="card_info">
+        <h2>This Is Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, molestias.</p>
+      </div>
+    </div>
+    
+
+  </div>
+
+  
+  
+  <script>
+
+    var sns = $('.sns')
+    var item = $('.sns span')
+
+
+    sns.hover(function(){
+      
+      item.each(function(index){
+        $(this).stop().animate({left: -(index*50)}, 300)
+      })
+    },  
+      item.each(function(index){
+        $(this).stop().animate({left: 0}, 300)
+      }))
+    
+
+  </script>
+</body>
+</html>

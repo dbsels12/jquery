@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jquery | Tab 02</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="./style_02.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tab 02</h1>   
+    <ul class="tab">
+      <li><a href="#">tab1</a></li>
+      <li><a href="#">tab2</a></li>
+      <li><a href="#">tab3</a></li>
+      <li><a href="#">tab4</a></li>
+    </ul>
+  
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+    </div>
+    
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+    </div>
+  
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+    </div>
+  
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quae hic doloremque perspiciatis voluptatum tempore vero velit explicabo corporis neque omnis sit, rerum modi sunt? Ad, dolore illum? Ipsum, minima?
+    </div>
+  </div>
+  <script>
+
+    var btn = $('.tab li')
+    var content = $('.content')  
+
+    btn.eq(0).addClass('active')
+    content.hide().eq(0).show()
+
+    btn.click(function(){
+      btn.removeClass('active')
+      $(this).addClass('active')
+
+      content.hide()
+      var activeIndex = $(this).index()   
+      content.eq(activeIndex).show()
+    })
+
+  </script>
+</body>
+</html>
